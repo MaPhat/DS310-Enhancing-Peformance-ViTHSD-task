@@ -1,22 +1,36 @@
-# DS310.P11
-Enhancing Performance Hatred by Targets for Hate Speech Detection on Vietnamese Social Media Texts
+🧠 DS310.P11 – Enhancing Target-based Hate Speech Detection on Vietnamese Social Media
+This project aims to improve the performance of target-based hate speech detection on Vietnamese social media texts by addressing imbalanced data and enhancing text normalization using the ViLexNorm dataset.
 
--Deal with imbalanced multilabel data
--Normalize data based on ViLexNorm dataset
+🔍 Problem
+Target-based hate speech detection requires identifying both:
 
-Experimental and Result
--Comparing 3 situation in applying this method:
-+Only normalizing data
+Whether a comment contains hate speech
 
-+Augmenting data first and then normalizing data
+Which group or individual the hatred is targeted at
 
-+Normaling data first and them augmenting data
+Vietnamese social media texts are often informal, noisy, and highly imbalanced across target labels.
 
--Model:
-+Bi-GRU-LSTM-CNN
+⚙️ Methodology
+🧩 Data Challenges
+Multi-label imbalance: Some hate targets are underrepresented
 
-+XLM-R
+Noisy informal language: Requires normalization to standard Vietnamese
 
-+ViSoBert
+🔧 Preprocessing
+Normalization: Applied based on the ViLexNorm dataset (developed by UIT researchers)
 
-+PhoBert
+Data Augmentation: Used techniques like synonym replacement and random insertion to expand underrepresented classes
+
+🔬 Experimental Settings
+We compared three different preprocessing strategies:
+
+Normalization only
+
+Augmentation → then Normalization
+
+Normalization → then Augmentation
+
+🤖 Models Evaluated
+We applied 4 models,which were used in the original paper to compare such as Bi-GRU–LSTM–CNN, XLM-R, ViSoBERT, PhoBERT
+
+For the result, you can check the file report.pdf for more infomation.
